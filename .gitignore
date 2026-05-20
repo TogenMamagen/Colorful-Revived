@@ -4,3 +4,5 @@ obj/
 *.pdb
 *.blob
 Colourful session.md
+AGENTS.md
+.opencode/

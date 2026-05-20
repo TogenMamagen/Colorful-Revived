@@ -1,9 +1,0 @@
-{
-  "name": "Colorful",
-  "version_number": "1.2.0",
-  "website_url": "https://github.com/YOUR_USERNAME/Colorful",
-  "description": "Colors BONELAB UI elements — radial menu, main menu, preferences, inventory, leaderboard, spawnable UI, InfoBoard, arena score, Hub modules, and Fusion support.",
-  "dependencies": [
-    "BoneLib-BoneLib-3.1.0"
-  ]
-}

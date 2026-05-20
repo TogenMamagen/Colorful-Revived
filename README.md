@@ -1,39 +1,16 @@
-# Colorful
+Hello everyone! Togen Speaking!, Colorful no? We all liked that mod when it came out on patch 3 days by BreadSoup, unfortunately the mod was abandoned and never updated on newer BONELAB versions, and BreadSoup hasn't been heard off for a long time now.
 
-A BONELAB MelonLoader mod that colors UI elements — radial menu, main menu, preferences, inventory, leaderboard, spawnable UI, InfoBoard, arena score display, Hub modules, and Fusion compatibility.
+Today that changes! Say hello to the revived Colorful mod!
 
-## Install
+Here's everything you can customize:
 
-1. Install [BoneLib](https://bonelab.thunderstore.io/package/BoneLib/BoneLib/)
-2. Download `Colorful.dll` from [Releases](https://github.com/YOUR_USERNAME/Colorful/releases)
-3. Place it in `BONELAB/Mods/`
-4. Launch the game
+1.Radial Menu's!
+2.General UI! (Such as main menu, leaderboards, etc etc)
 
-## Build
+Support for Fusion and other mods has been added! (Though its still in need of improving.)
 
-Requires .NET 6 SDK and BONELAB game files for Il2Cpp assembly references.
+///DISCLAIMER///
 
-```
-export BONELAB_DIR="/path/to/SteamLibrary/steamapps/common/BONELAB"
-dotnet build Colorful.csproj -c Release
-cp bin/Release/Colorful.dll "$BONELAB_DIR/Mods/"
-```
+This project was made with the use of OpenCode LLM whatever the fuck it is, i don't consider myself a coder, nor should anyone else consider me as one, im just a 20 year old furry chud that really loved this code mod back when it released and wanted to try to revive it so everyone could enjoy it. (Please don't send a hitsquad to kill me .n.)
 
-## Usage
-
-- Open the BoneMenu (default: `Insert`) → find the **Colorful** page
-- Toggle the mod on/off
-- Adjust colors for each UI element individually
-- Use **Color Override** to set all colors at once
-- Use **Default All** to reset everything
-- Radar directions match their respective UI section
-
-## Compatibility
-
-- **LabFusion** — automatically detected, adds Fusion menu color control
-- **BrowsingPlus** — auto-repaints when new UI elements appear
-- **SearchThing** — auto-repaints on search results
-
-## License
-
-MIT
+All of the code is open source for everyone to use! Just please credit BreadSoup, he's/she's the one that deserves the credit more than me.

@@ -1,6 +1,9 @@
 using BoneLib.BoneMenu;
 using UnityEngine;
 
+// This file is part of the `PreferencesCreator` partial class.
+// See `PreferencesSetup.cs` for the other half (MelonPreferences entries).
+
 namespace Melon_Loader_Mod5
 {
     internal partial class PreferencesCreator
