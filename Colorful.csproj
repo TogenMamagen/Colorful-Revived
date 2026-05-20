@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>Colorful</AssemblyName>
+    <RootNamespace>Melon_Loader_Mod5</RootNamespace>
+    <Version>1.2.0</Version>
+    <Authors>Bread Soup</Authors>
+    <LangVersion>7.3</LangVersion>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>bin/$(Configuration)</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony" HintPath="$(BONELAB_DIR)/MelonLoader/net6/0Harmony.dll" />
+    <Reference Include="Assembly-CSharp" HintPath="$(BONELAB_DIR)/MelonLoader/Il2CppAssemblies/Assembly-CSharp.dll" />
+    <Reference Include="BoneLib" HintPath="$(BONELAB_DIR)/Mods/BoneLib.dll" />
+    <Reference Include="Il2Cppmscorlib" HintPath="$(BONELAB_DIR)/MelonLoader/Il2CppAssemblies/Il2Cppmscorlib.dll" />
+    <Reference Include="MelonLoader" HintPath="$(BONELAB_DIR)/MelonLoader/net6/MelonLoader.dll" />
+    <Reference Include="Il2CppSLZ.Marrow" HintPath="$(BONELAB_DIR)/MelonLoader/Il2CppAssemblies/Il2CppSLZ.Marrow.dll" />
+    <Reference Include="Unity.TextMeshPro" HintPath="$(BONELAB_DIR)/MelonLoader/Il2CppAssemblies/Unity.TextMeshPro.dll" />
+    <Reference Include="UnityEngine" HintPath="$(BONELAB_DIR)/MelonLoader/Il2CppAssemblies/UnityEngine.dll" />
+    <Reference Include="UnityEngine.CoreModule" HintPath="$(BONELAB_DIR)/MelonLoader/Il2CppAssemblies/UnityEngine.CoreModule.dll" />
+    <Reference Include="UnityEngine.UI" HintPath="$(BONELAB_DIR)/MelonLoader/Il2CppAssemblies/UnityEngine.UI.dll" />
+    <Reference Include="Il2CppSystem.Core" HintPath="$(BONELAB_DIR)/MelonLoader/Il2CppAssemblies/Il2CppSystem.Core.dll" />
+    <Reference Include="Il2CppSystem" HintPath="$(BONELAB_DIR)/MelonLoader/Il2CppAssemblies/Il2CppSystem.dll" />
+    <Reference Include="Il2CppInterop.Runtime" HintPath="$(BONELAB_DIR)/MelonLoader/net6/Il2CppInterop.Runtime.dll" />
+  </ItemGroup>
+</Project>
