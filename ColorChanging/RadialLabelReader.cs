@@ -3,7 +3,7 @@ using MelonLoader;
 using UnityEngine;
 using System.Collections;
 
-namespace Melon_Loader_Mod5
+namespace Colorful
 {
     internal static class RadialLabelReader
     {

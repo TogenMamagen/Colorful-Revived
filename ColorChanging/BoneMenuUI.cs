@@ -3,7 +3,7 @@ using Il2CppTMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Melon_Loader_Mod5
+namespace Colorful
 {
     public static class BoneMenuUI
     {

@@ -1,7 +1,7 @@
 using Il2CppTMPro;
 using UnityEngine;
 
-namespace Melon_Loader_Mod5
+namespace Colorful
 {
     public class RadialMenuTextAndImageUI
     {

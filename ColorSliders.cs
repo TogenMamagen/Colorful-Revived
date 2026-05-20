@@ -2,7 +2,7 @@ using BoneLib.BoneMenu;
 using System;
 using UnityEngine;
 
-namespace Melon_Loader_Mod5
+namespace Colorful
 {
     internal static class ColorSliders
     {

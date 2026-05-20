@@ -4,7 +4,7 @@ using UnityEngine;
 // This file is part of the `PreferencesCreator` partial class.
 // See `BoneMenuBuilder.cs` for the other half (BoneMenu page creation).
 
-namespace Melon_Loader_Mod5
+namespace Colorful
 {
     internal partial class PreferencesCreator
     {

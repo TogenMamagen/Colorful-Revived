@@ -2,7 +2,7 @@ using BoneLib.BoneMenu;
 using MelonLoader;
 using UnityEngine;
 
-namespace Melon_Loader_Mod5
+namespace Colorful
 {
     public abstract class ModModule
     {

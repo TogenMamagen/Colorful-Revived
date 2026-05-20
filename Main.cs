@@ -3,11 +3,11 @@ using UnityEngine;
 using BoneLib;
 using BoneLib.BoneMenu;
 
-[assembly: MelonInfo(typeof(Melon_Loader_Mod5.Main), "Colorful-Revived", "1.0.0", "TogenMerfagen")]
+[assembly: MelonInfo(typeof(Colorful.Main), "Colorful-Revived", "1.0.0", "TogenMerfagen")]
 [assembly: MelonGame("Stress Level Zero", "BONELAB")]
 [assembly: MelonPriority(1)]
 
-namespace Melon_Loader_Mod5
+namespace Colorful
 {
     public partial class Main : MelonMod
     {

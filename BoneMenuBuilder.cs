@@ -4,7 +4,7 @@ using UnityEngine;
 // This file is part of the `PreferencesCreator` partial class.
 // See `PreferencesSetup.cs` for the other half (MelonPreferences entries).
 
-namespace Melon_Loader_Mod5
+namespace Colorful
 {
     internal partial class PreferencesCreator
     {

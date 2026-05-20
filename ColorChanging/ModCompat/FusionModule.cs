@@ -3,7 +3,7 @@ using MelonLoader;
 using System.Reflection;
 using UnityEngine;
 
-namespace Melon_Loader_Mod5
+namespace Colorful
 {
     public class FusionModule : ModModule
     {

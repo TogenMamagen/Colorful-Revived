@@ -1,7 +1,7 @@
 using Il2CppSLZ.Bonelab;
 using UnityEngine;
 
-namespace Melon_Loader_Mod5
+namespace Colorful
 {
     public static class InventorySlotsUI
     {
