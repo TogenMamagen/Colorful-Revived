@@ -76,21 +76,27 @@ namespace Colorful
             return null;
         }
 
+        private static UnityEngine.UI.Image _cachedDivider;
+
         public static void SetDividerLineColor(Color color)
         {
-            var objs = GameObject.FindObjectsOfType<GameObject>(true);
-            foreach (var obj in objs)
+            if (_cachedDivider == null)
             {
-                if (obj.name != "image----------------") continue;
-                var p = obj.transform.parent;
-                if (p != null && p.name == "panel_Preferences")
+                var objs = GameObject.FindObjectsOfType<GameObject>(true);
+                foreach (var obj in objs)
                 {
-                    var img = obj.GetComponent<UnityEngine.UI.Image>();
-                    if (img != null)
-                        img.color = color;
-                    return;
+                    if (obj.name != "image----------------") continue;
+                    var p = obj.transform.parent;
+                    if (p != null && p.name == "panel_Preferences")
+                    {
+                        _cachedDivider = obj.GetComponent<UnityEngine.UI.Image>();
+                        break;
+                    }
                 }
             }
+
+            if (_cachedDivider != null)
+                _cachedDivider.color = color;
         }
     }
 }

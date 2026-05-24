@@ -14,6 +14,7 @@ namespace Colorful
 
         private bool _patched;
         private static FusionModule _instance;
+        private UnityEngine.UI.Image _cachedNavBackline;
 
         public FusionModule()
         {
@@ -41,7 +42,7 @@ namespace Colorful
                     foreach (var type in asm.GetExportedTypes())
                     {
                         if (type.Name.Contains("MenuPage"))
-                            TryPatch(type);
+                            TryPatchEnable(type);
                     }
                 }
                 catch { }
@@ -56,36 +57,23 @@ namespace Colorful
                     foreach (var type in asm.GetExportedTypes())
                     {
                         if (type.Name.Contains("MenuPage"))
-                            TryPatch(type);
+                            TryPatchEnable(type);
                     }
                 }
                 catch { }
             }
         }
 
-        private void TryPatch(System.Type type)
+        private void TryPatchEnable(System.Type type)
         {
             var flags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance;
-
             var onEnable = type.GetMethod("OnEnable", flags);
-            if (onEnable != null)
-            {
-                var harmony = new HarmonyLib.Harmony($"Colorful.Fusion.{type.FullName}.OnEnable");
-                var postfix = new HarmonyMethod(typeof(FusionModule), nameof(OnMenuEnabled));
-                harmony.Patch(onEnable, postfix: postfix);
-                _patched = true;
-                MelonLogger.Msg($"Patched {type.FullName}.OnEnable");
-            }
+            if (onEnable == null) return;
 
-            var onDisable = type.GetMethod("OnDisable", flags);
-            if (onDisable != null)
-            {
-                var harmony = new HarmonyLib.Harmony($"Colorful.Fusion.{type.FullName}.OnDisable");
-                var postfix = new HarmonyMethod(typeof(FusionModule), nameof(OnMenuDisabled));
-                harmony.Patch(onDisable, postfix: postfix);
-                _patched = true;
-                MelonLogger.Msg($"Patched {type.FullName}.OnDisable");
-            }
+            var harmony = new HarmonyLib.Harmony($"Colorful.Fusion.{type.FullName}");
+            var postfix = new HarmonyMethod(typeof(FusionModule), nameof(OnMenuEnabled));
+            harmony.Patch(onEnable, postfix: postfix);
+            _patched = true;
         }
 
         private static void OnMenuEnabled(MonoBehaviour __instance)
@@ -107,27 +95,8 @@ namespace Colorful
             }
         }
 
-        private static void OnMenuDisabled(MonoBehaviour __instance)
-        {
-            if (!PreferencesCreator.IsEnabled || __instance == null || _instance == null)
-                return;
-
-            Transform t = __instance.transform;
-            while (t != null)
-            {
-                if (t.name.Contains("canvas_FusionMenu"))
-                {
-                    ModModuleManager.SetDividerLineColor(Colors.East);
-                    return;
-                }
-                t = t.parent;
-            }
-        }
-
         public override void OnMoggingTime(GameObject obj)
         {
-            LoadFromPrefs();
-
             if (obj.name.Contains("canvas_FusionMenu"))
                 FusionUI.Paint(obj.transform, PreferencesCreator.IsEnabled ? Color : Color.white);
 
@@ -144,16 +113,17 @@ namespace Colorful
 
         private void PaintFusionNavButton()
         {
-            var fusionBtn = GameObject.Find("button_Fusion");
-            if (fusionBtn == null) return;
-
-            var backline = fusionBtn.transform.Find("image_backline");
-            if (backline != null)
+            if (_cachedNavBackline == null)
             {
-                var img = backline.GetComponent<UnityEngine.UI.Image>();
-                if (img != null)
-                    img.color = Color;
+                var btn = GameObject.Find("button_Fusion");
+                if (btn == null) return;
+                var bl = btn.transform.Find("image_backline");
+                if (bl == null) return;
+                _cachedNavBackline = bl.GetComponent<UnityEngine.UI.Image>();
             }
+
+            if (_cachedNavBackline != null)
+                _cachedNavBackline.color = Color;
         }
 
     }
