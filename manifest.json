@@ -1,0 +1,9 @@
+{
+  "name": "Colorful_Revived",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/TogenMamagen/Colorful-Revived",
+  "description": "Revived version of the Colorful mod! Originally by BreadSoup, now updated for newer BONELAB versions. Customize the colors of your Radial Menus, General UI, Main Menu, Leaderboards, and more! Fusion support included.",
+  "dependencies": [
+    "BoneLib-BoneLib-3.1.0"
+  ]
+}
