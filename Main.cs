@@ -113,7 +113,6 @@ namespace Colorful
 
                 ModModuleManager.OnMoggingTimeAll(obj);
             }
-            BoneMenuUI.Paint();
             RadialMenuButtonsUI.RadialMenuButtons();
         }
     }

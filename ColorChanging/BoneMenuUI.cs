@@ -34,6 +34,10 @@ namespace Colorful
             for (int i = 0; i < parent.childCount; i++)
             {
                 Transform child = parent.GetChild(i);
+
+                if (child.name == "Keyboard")
+                    continue;
+
                 TryPaint(child, targetColor);
                 PaintRecursive(child, targetColor);
             }

@@ -18,7 +18,7 @@ namespace Colorful
                 if (ContainsName(skipNames, child.name))
                     continue;
 
-                if (child.name.Contains("canvas_FusionMenu"))
+                if (child.name.Contains("canvas_FusionMenu") || child.name.Contains("[BoneMenu]"))
                     continue;
 
                 Image img = child.GetComponent<Image>();
