@@ -37,6 +37,7 @@ namespace Colorful
         public static void MoggingTime()
         {
             Colors.LoadFromPrefs();
+            SpawnGunUI.ResetPaint();
 
             var objectsWithKeyword = GameObject.FindObjectsOfType<GameObject>(true);
             foreach (GameObject obj in objectsWithKeyword)

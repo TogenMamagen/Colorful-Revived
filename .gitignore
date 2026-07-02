@@ -6,4 +6,5 @@ obj/
 Colourful session.md
 AGENTS.md
 .opencode/
+.vscode/
 *.zip

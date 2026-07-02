@@ -5,8 +5,19 @@ namespace Colorful
 {
     public class SpawnGunUI
     {
+        private static bool _painted;
+
+        public static void ResetPaint()
+        {
+            _painted = false;
+        }
+
         public static void SpawnGun(Transform parent)
         {
+            if (_painted)
+                return;
+            _painted = true;
+
             Color color = PreferencesCreator.IsEnabled ? Colors.West : Color.white;
 
             foreach (var img in parent.GetComponentsInChildren<UnityEngine.UI.Image>(true))
