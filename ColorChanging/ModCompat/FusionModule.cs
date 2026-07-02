@@ -23,7 +23,16 @@ namespace Colorful
 
         public override void Apply()
         {
-            var canvas = GameObject.Find("canvas_FusionMenu [0]");
+            GameObject canvas = null;
+            var all = GameObject.FindObjectsOfType<GameObject>(true);
+            foreach (var go in all)
+            {
+                if (go.name.StartsWith("canvas_FusionMenu"))
+                {
+                    canvas = go;
+                    break;
+                }
+            }
             if (canvas != null)
                 FusionUI.Paint(canvas.transform, Color);
             PaintFusionNavButton();
@@ -84,9 +93,9 @@ namespace Colorful
             Transform t = __instance.transform;
             while (t != null)
             {
-                if (t.name.Contains("canvas_FusionMenu"))
+                if (t.name.StartsWith("canvas_FusionMenu"))
                 {
-                    FusionUI.Paint(__instance.transform, _instance.Color);
+                    FusionUI.Paint(t, _instance.Color);
                     _instance.PaintFusionNavButton();
                     ModModuleManager.SetDividerLineColor(_instance.Color);
                     return;
@@ -97,7 +106,7 @@ namespace Colorful
 
         public override void OnMoggingTime(GameObject obj)
         {
-            if (obj.name.Contains("canvas_FusionMenu"))
+            if (obj.name.StartsWith("canvas_FusionMenu"))
                 FusionUI.Paint(obj.transform, PreferencesCreator.IsEnabled ? Color : Color.white);
 
             if (obj.name.Contains("button_Fusion"))

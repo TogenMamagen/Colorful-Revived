@@ -105,13 +105,7 @@ namespace Colorful
             if (panelView == null)
                 return;
 
-            var t = panelView.transform;
-            while (t.parent != null)
-                t = t.parent;
-
-            var toolMenu = t.Find("group_toolMenu");
-            if (toolMenu != null)
-                SpawnGunUI.SpawnGun(toolMenu);
+            SpawnGunUI.SpawnGun(panelView.transform);
         }
 
         private static void OnPanelEnabled(UnityEngine.MonoBehaviour __instance)
