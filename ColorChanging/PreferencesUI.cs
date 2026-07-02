@@ -21,6 +21,15 @@ namespace Colorful
                 if (child.name.Contains("canvas_FusionMenu") || child.name.Contains("[BoneMenu]"))
                     continue;
 
+                if (child.name == "VRS_Info")
+                    continue;
+
+                if (child.name == "Viewport_VRS")
+                {
+                    Preferences(child);
+                    continue;
+                }
+
                 Image img = child.GetComponent<Image>();
                 if (img != null)
                     img.color = color;
